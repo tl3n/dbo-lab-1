@@ -128,6 +128,30 @@ DBO_Lab1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/build
 .PHONY : DBO_Lab1/fast
 
+Sources/Book.obj: Sources/Book.cpp.obj
+.PHONY : Sources/Book.obj
+
+# target to build an object file
+Sources/Book.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Book.cpp.obj
+.PHONY : Sources/Book.cpp.obj
+
+Sources/Book.i: Sources/Book.cpp.i
+.PHONY : Sources/Book.i
+
+# target to preprocess a source file
+Sources/Book.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Book.cpp.i
+.PHONY : Sources/Book.cpp.i
+
+Sources/Book.s: Sources/Book.cpp.s
+.PHONY : Sources/Book.s
+
+# target to generate assembly for a file
+Sources/Book.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Book.cpp.s
+.PHONY : Sources/Book.cpp.s
+
 Sources/Publisher.obj: Sources/Publisher.cpp.obj
 .PHONY : Sources/Publisher.obj
 
@@ -185,6 +209,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... DBO_Lab1
+	@echo ... Sources/Book.obj
+	@echo ... Sources/Book.i
+	@echo ... Sources/Book.s
 	@echo ... Sources/Publisher.obj
 	@echo ... Sources/Publisher.i
 	@echo ... Sources/Publisher.s

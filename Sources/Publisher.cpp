@@ -4,51 +4,45 @@
 
 #include "Publisher.h"
 
-Publisher::Publisher(int id, std::string name, std::string address, bool state)
-{
+Publisher::Publisher(int id,
+                     std::string name,
+                     std::string address,
+                     bool state) {
     this->id = id;
     this->name = name;
     this->address = address;
     this->state = state;
 }
 
-int Publisher::getId()
-{
+int Publisher::getId() {
   return this->id;
 }
 
-void Publisher::setId(int newId)
-{
+void Publisher::setId(int newId) {
     this->id = newId;
 }
 
-std::string Publisher::getName()
-{
+std::string Publisher::getName() {
     return this->name;
 }
 
-void Publisher::setName(const std::string& newName)
-{
+void Publisher::setName(const std::string& newName) {
     this->name = newName;
 }
 
-std::string Publisher::getAddress()
-{
+std::string Publisher::getAddress() {
     return this->address;
 }
 
-void Publisher::setAddress(const std::string& newAddress)
-{
+void Publisher::setAddress(const std::string& newAddress) {
     this->address = newAddress;
 }
 
-bool Publisher::getState()
-{
+bool Publisher::getState() {
     return this->state;
 }
 
-void Publisher::setState(bool newState)
-{
+void Publisher::setState(bool newState) {
     this->state = newState;
 }
 

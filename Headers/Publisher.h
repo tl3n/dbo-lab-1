@@ -6,13 +6,14 @@
 #define DBO_LAB1_PUBLISHER_H
 
 #include <string>
-#include <vector>
-#include <cstdlib>
 #include "Constants.h"
 class Publisher
 {
 public:
-    Publisher(int id, std::string name, std::string address, bool state = true);
+    Publisher(int id,
+              std::string name,
+              std::string address,
+              bool state = true);
 
     Publisher() = default;
 

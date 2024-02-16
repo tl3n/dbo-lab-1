@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/DBO_Lab1.dir/Sources/Book.cpp.obj"
+  "CMakeFiles/DBO_Lab1.dir/Sources/Book.cpp.obj.d"
   "CMakeFiles/DBO_Lab1.dir/Sources/Publisher.cpp.obj"
   "CMakeFiles/DBO_Lab1.dir/Sources/Publisher.cpp.obj.d"
   "CMakeFiles/DBO_Lab1.dir/main.cpp.obj"

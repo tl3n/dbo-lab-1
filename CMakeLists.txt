@@ -8,4 +8,6 @@ include_directories(Headers)
 add_executable(DBO_Lab1 main.cpp
         Headers/Publisher.h
         Sources/Publisher.cpp
-        Headers/Constants.h)
+        Headers/Constants.h
+        Headers/Book.h
+        Sources/Book.cpp)
