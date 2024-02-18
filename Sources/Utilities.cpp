@@ -3,10 +3,11 @@
 //
 #include "Utilities.h"
 
-void writeBook(FILE* file, const Book& book) {
+void writeBook(FILE* file, const Book& book, long address) {
     // file should be opened previously
     // this is why there is no check if file exists
     // it should be done on the other side
+    fseek(file, address, SEEK_SET);
 
     int id = book.getId();
     int publisherId = book.getPublisherId();
@@ -23,7 +24,9 @@ void writeBook(FILE* file, const Book& book) {
     fwrite(genre, CHAR_SIZE, STRING_SIZE, file);
 }
 
-Book readBook(FILE* file) {
+Book readBook(FILE* file, long address) {
+    fseek(file, address, SEEK_SET);
+
     int id;
     int publisherId;
     long long isbn;
@@ -41,25 +44,29 @@ Book readBook(FILE* file) {
     return {id, publisherId, isbn, title, author, genre};
 }
 
-void writePublisher(FILE* file, const Publisher& publisher) {
+void writePublisher(FILE* file, const Publisher& publisher, long address) {
+    fseek(file, address, SEEK_SET);
+
     int id = publisher.getId();
     char* name = publisher.getName();
-    char* address = publisher.getAddress();
+    char* publisherAddress = publisher.getAddress();
 
     fwrite(&id, INT_SIZE, 1, file);
     fwrite(name, CHAR_SIZE, STRING_SIZE, file);
-    fwrite(address, CHAR_SIZE, STRING_SIZE, file);
+    fwrite(publisherAddress, CHAR_SIZE, STRING_SIZE, file);
 }
 
-Publisher readPublisher(FILE* file) {
+Publisher readPublisher(FILE* file, long address) {
+    fseek(file, address, SEEK_SET);
+
     int id;
     char* name = new char[STRING_SIZE];
-    char* address = new char[STRING_SIZE];
+    char* publisherAddress = new char[STRING_SIZE];
 
     fread(&id, INT_SIZE, 1, file);
     fread(name, CHAR_SIZE, STRING_SIZE, file);
-    fread(address, CHAR_SIZE, STRING_SIZE, file);
+    fread(publisherAddress, CHAR_SIZE, STRING_SIZE, file);
 
-    return {id, name, address};
+    return {id, name, publisherAddress};
 }
 
