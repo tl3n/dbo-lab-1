@@ -5,16 +5,16 @@
 #include "Publisher.h"
 
 Publisher::Publisher(int id,
-                     std::string name,
-                     std::string address,
-                     bool state) {
+                     char* name,
+                     char* address,
+                     bool isRemoved) {
     this->id = id;
     this->name = name;
     this->address = address;
-    this->state = state;
+    this->isRemoved = isRemoved;
 }
 
-int Publisher::getId() {
+int Publisher::getId() const {
   return this->id;
 }
 
@@ -22,34 +22,34 @@ void Publisher::setId(int newId) {
     this->id = newId;
 }
 
-std::string Publisher::getName() {
+char* Publisher::getName() const {
     return this->name;
 }
 
-void Publisher::setName(const std::string& newName) {
+void Publisher::setName(char* newName) {
     this->name = newName;
 }
 
-std::string Publisher::getAddress() {
+char* Publisher::getAddress() const {
     return this->address;
 }
 
-void Publisher::setAddress(const std::string& newAddress) {
+void Publisher::setAddress(char* newAddress) {
     this->address = newAddress;
 }
 
-bool Publisher::getState() {
-    return this->state;
+bool Publisher::getState() const {
+    return this->isRemoved;
 }
 
 void Publisher::setState(bool newState) {
-    this->state = newState;
+    this->isRemoved = newState;
 }
 
-std::string Publisher::toString() {
+std::string Publisher::toString() const {
     return "ID: " + std::to_string(this->id) +
            "; Name: " + this->name +
-           "; Adress: " + this->address +
+           "; Address: " + this->address +
            ";";
 }
 

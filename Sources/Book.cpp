@@ -17,7 +17,6 @@ Book::Book(int id,
     this->publisherId = publisherId;
     // TODO: if books have the same isbn but don't have the same title, author and genre
     // maybe use map with isbn as key?
-    // TODO: isbn should be 13 digits long
     this->setIsbn(isbn);
     this->title = title;
     this->author = author;

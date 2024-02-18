@@ -11,34 +11,34 @@ class Publisher
 {
 public:
     Publisher(int id,
-              std::string name,
-              std::string address,
+              char* name,
+              char* address,
               bool state = PUBLISHER_STATE_ACTIVE);
 
     Publisher() = default;
 
-    int getId();
+    int getId() const;
 
     void setId(int newID);
 
-    std::string getName();
+    char* getName() const;
 
-    void setName(const std::string& newName);
+    void setName(char* newName);
 
-    std::string getAddress();
+    char* getAddress() const;
 
-    void setAddress(const std::string& newAddress);
+    void setAddress(char* newAddress);
 
-    bool getState();
+    bool getState() const;
 
     void setState(bool newState);
 
-    std::string toString();
+    std::string toString() const;
 private:
     int id = -1;
-    std::string name;
-    std::string address;
-    bool state = PUBLISHER_STATE_ACTIVE;
+    char* name = new char[STRING_SIZE];
+    char* address = new char[STRING_SIZE];
+    bool isRemoved = PUBLISHER_STATE_ACTIVE;
 };
 
 #endif //DBO_LAB1_PUBLISHER_H
