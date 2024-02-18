@@ -6,6 +6,9 @@
 #define DBO_LAB1_CONSTANTS_H
 
 const int STRING_SIZE = 256;
+const int INT_SIZE = sizeof(int);
+const int LL_SIZE = sizeof(long long);
+const int CHAR_SIZE = sizeof(char);
 
 const bool PUBLISHER_STATE_ACTIVE = false;
 const bool PUBLISHER_STATE_REMOVED = true;
