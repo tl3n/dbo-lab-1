@@ -3,6 +3,7 @@
 #include "Book.h"
 
 int main() {
+    // publisher class tests
     /*Publisher myPublisher1;
     std::cout << "default constructor:\n" << myPublisher1.toString() << "\n";
 
@@ -12,9 +13,13 @@ int main() {
     Publisher myPublisher3(2, "Stariy Lev", "Luhova 43", false);
     std::cout << "explicit constructor with state:\n" << myPublisher3.toString() << "\n";*/
 
-    Book myBook1;
+    // books class tests
+    /*Book myBook1;
     std::cout << "default constructor:\n" << myBook1.toString() << '\n';
 
-    Book myBook2(1, 1, )
+    Book myBook2(1, 1, 1, "1", "2", "3");
+    std::cout << "explicit constructor:\n" << myBook2.toString() << '\n';*/
+
+
     return 0;
 }

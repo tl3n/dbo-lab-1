@@ -5,6 +5,7 @@
 #ifndef DBO_LAB1_BOOK_H
 #define DBO_LAB1_BOOK_H
 
+#include <iostream>
 #include <string>
 #include "Constants.h"
 
@@ -14,10 +15,10 @@ public:
     Book(int id,
          int publisherId,
          long long isbn,
-         std::string title,
-         std::string author,
-         std::string genre,
-         bool state = DIRECTOR_STATE_ACTIVE);
+         char* title,
+         char* author,
+         char* genre,
+         bool state = BOOK_STATE_ACTIVE);
 
     Book() = default;
 
@@ -33,17 +34,17 @@ public:
 
     void setIsbn(long long newIsbn);
 
-    std::string getTitle() const;
+    char* getTitle() const;
 
-    void setTitle(const std::string& newTitle);
+    void setTitle(char* newTitle);
 
-    std::string getAuthor() const;
+    char* getAuthor() const;
 
-    void setAuthor(const std::string& newAuthor);
+    void setAuthor(char* newAuthor);
 
-    std::string getGenre() const;
+    char* getGenre() const;
 
-    void setGenre(const std::string& newGenre);
+    void setGenre(char* newGenre);
 
     bool getState() const;
 
@@ -53,11 +54,11 @@ public:
 private:
     int id = -1;
     int publisherId = -1;
-    long long isbn;
-    std::string title;
-    std::string author;
-    std::string genre;
-    bool state = DIRECTOR_STATE_ACTIVE;
+    long long isbn = 0;
+    char* title = new char[STRING_SIZE]; // I need certain size of the string, so it's better to use char*[] than std::string
+    char* author = new char[STRING_SIZE];
+    char* genre = new char[STRING_SIZE];
+    bool isRemoved = BOOK_STATE_ACTIVE;
 };
 
 #endif //DBO_LAB1_BOOK_H

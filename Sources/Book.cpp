@@ -7,21 +7,22 @@
 Book::Book(int id,
            int publisherId,
            long long isbn,
-           std::string title,
-           std::string author,
-           std::string genre,
-           bool state) {
+           char* title,
+           char* author,
+           char* genre,
+           bool isRemoved) {
     // TODO: is this id is already taken
     this->id = id;
     // TODO: is this publisherId exists
     this->publisherId = publisherId;
     // TODO: if books have the same isbn but don't have the same title, author and genre
     // maybe use map with isbn as key?
-    this->isbn = isbn;
+    // TODO: isbn should be 13 digits long
+    this->setIsbn(isbn);
     this->title = title;
     this->author = author;
     this->genre = genre;
-    this->state = state;
+    this->isRemoved = isRemoved;
 }
 int Book::getId() const {
     return this->id;
@@ -46,39 +47,45 @@ long long Book::getIsbn() const {
 }
 
 void Book::setIsbn(long long newIsbn) {
-    this->isbn = newIsbn;
+    if (std::to_string(newIsbn).length() != 13) {
+        std::cerr << "ISBN must be 13 digits long.";
+        return;
+    }
+    else {
+        this->isbn = newIsbn;
+    }
 }
 
-std::string Book::getTitle() const {
+char* Book::getTitle() const {
     return this->title;
 }
 
-void Book::setTitle(const std::string& newTitle) {
+void Book::setTitle(char* newTitle) {
     this->title = newTitle;
 }
 
-std::string Book::getAuthor() const {
+char* Book::getAuthor() const {
     return this->author;
 }
 
-void Book::setAuthor(const std::string& newAuthor) {
+void Book::setAuthor(char* newAuthor) {
     this->author = newAuthor;
 }
 
-std::string Book::getGenre() const {
+char* Book::getGenre() const {
     return this->genre;
 }
 
-void Book::setGenre(const std::string &newGenre) {
+void Book::setGenre(char* newGenre) {
     this->genre = newGenre;
 }
 
 bool Book::getState() const {
-    return this->state;
+    return this->isRemoved;
 }
 
 void Book::setState(bool newState) {
-    this->state = newState;
+    this->isRemoved = newState;
 }
 
 std::string Book::toString() const {

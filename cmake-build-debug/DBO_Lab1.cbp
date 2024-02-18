@@ -93,10 +93,16 @@
 		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Publisher.h">
 			<Option target="DBO_Lab1"/>
 		</Unit>
+		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Utilities.h">
+			<Option target="DBO_Lab1"/>
+		</Unit>
 		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Sources/Book.cpp">
 			<Option target="DBO_Lab1"/>
 		</Unit>
 		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Sources/Publisher.cpp">
+			<Option target="DBO_Lab1"/>
+		</Unit>
+		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Sources/Utilities.cpp">
 			<Option target="DBO_Lab1"/>
 		</Unit>
 		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/main.cpp">

@@ -13,7 +13,7 @@ public:
     Publisher(int id,
               std::string name,
               std::string address,
-              bool state = true);
+              bool state = PUBLISHER_STATE_ACTIVE);
 
     Publisher() = default;
 
@@ -38,7 +38,7 @@ private:
     int id = -1;
     std::string name;
     std::string address;
-    bool state = DIRECTOR_STATE_ACTIVE;
+    bool state = PUBLISHER_STATE_ACTIVE;
 };
 
 #endif //DBO_LAB1_PUBLISHER_H

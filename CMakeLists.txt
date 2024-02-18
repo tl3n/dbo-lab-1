@@ -10,4 +10,6 @@ add_executable(DBO_Lab1 main.cpp
         Sources/Publisher.cpp
         Headers/Constants.h
         Headers/Book.h
-        Sources/Book.cpp)
+        Sources/Book.cpp
+        Headers/Utilities.h
+        Sources/Utilities.cpp)

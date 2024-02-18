@@ -5,8 +5,12 @@
 #ifndef DBO_LAB1_CONSTANTS_H
 #define DBO_LAB1_CONSTANTS_H
 
-const int STRING_SIZE = 255;
+const int STRING_SIZE = 256;
 
-const bool DIRECTOR_STATE_ACTIVE = 1;
-const bool DIRECTOR_STATE_REMOVED = 0;
+const bool PUBLISHER_STATE_ACTIVE = false;
+const bool PUBLISHER_STATE_REMOVED = true;
+
+const bool BOOK_STATE_ACTIVE = false;
+const bool BOOK_STATE_REMOVED = true;
+
 #endif //DBO_LAB1_CONSTANTS_H

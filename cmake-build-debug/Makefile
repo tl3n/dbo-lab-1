@@ -176,6 +176,30 @@ Sources/Publisher.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Publisher.cpp.s
 .PHONY : Sources/Publisher.cpp.s
 
+Sources/Utilities.obj: Sources/Utilities.cpp.obj
+.PHONY : Sources/Utilities.obj
+
+# target to build an object file
+Sources/Utilities.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Utilities.cpp.obj
+.PHONY : Sources/Utilities.cpp.obj
+
+Sources/Utilities.i: Sources/Utilities.cpp.i
+.PHONY : Sources/Utilities.i
+
+# target to preprocess a source file
+Sources/Utilities.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Utilities.cpp.i
+.PHONY : Sources/Utilities.cpp.i
+
+Sources/Utilities.s: Sources/Utilities.cpp.s
+.PHONY : Sources/Utilities.s
+
+# target to generate assembly for a file
+Sources/Utilities.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Utilities.cpp.s
+.PHONY : Sources/Utilities.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -215,6 +239,9 @@ help:
 	@echo ... Sources/Publisher.obj
 	@echo ... Sources/Publisher.i
 	@echo ... Sources/Publisher.s
+	@echo ... Sources/Utilities.obj
+	@echo ... Sources/Utilities.i
+	@echo ... Sources/Utilities.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
