@@ -7,6 +7,7 @@
 
 const int STRING_SIZE = 256;
 const int INT_SIZE = sizeof(int);
+const int LONG_SIZE = sizeof(long);
 const int LL_SIZE = sizeof(long long);
 const int CHAR_SIZE = sizeof(char);
 const int INDEXES_MAX_SIZE = 20;

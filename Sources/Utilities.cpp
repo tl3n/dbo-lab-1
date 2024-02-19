@@ -15,6 +15,8 @@ void writeBook(FILE* file, const Book& book, long address) {
     char* title = book.getTitle();
     char* author = book.getAuthor();
     char* genre = book.getGenre();
+    long prevBookAddress = book.getPrevBookAddress();
+    long nextBookAddress = book.getNextBookAddress();
 
     fwrite(&id, INT_SIZE, 1, file);
     fwrite(&publisherId, INT_SIZE, 1, file);
@@ -22,6 +24,8 @@ void writeBook(FILE* file, const Book& book, long address) {
     fwrite(title, CHAR_SIZE, STRING_SIZE, file);
     fwrite(author, CHAR_SIZE, STRING_SIZE, file);
     fwrite(genre, CHAR_SIZE, STRING_SIZE, file);
+    fwrite(&prevBookAddress, LONG_SIZE, 1, file);
+    fwrite(&nextBookAddress, LONG_SIZE, 1, file);
 }
 
 Book readBook(FILE* file, long address) {
@@ -33,6 +37,8 @@ Book readBook(FILE* file, long address) {
     char* title = new char[STRING_SIZE];
     char* author = new char[STRING_SIZE];
     char* genre = new char[STRING_SIZE];
+    long prevBookAddress;
+    long nextBookAddress;
 
     fread(&id, INT_SIZE, 1, file);
     fread(&publisherId, INT_SIZE, 1, file);
@@ -40,8 +46,10 @@ Book readBook(FILE* file, long address) {
     fread(title, CHAR_SIZE, STRING_SIZE, file);
     fread(author, CHAR_SIZE, STRING_SIZE, file);
     fread(genre, CHAR_SIZE, STRING_SIZE, file);
+    fread(&prevBookAddress, LONG_SIZE, 1, file);
+    fread(&nextBookAddress, LONG_SIZE, 1, file);
 
-    return {id, publisherId, isbn, title, author, genre};
+    return {id, publisherId, isbn, title, author, genre, prevBookAddress, nextBookAddress};
 }
 
 void writePublisher(FILE* file, const Publisher& publisher, long address) {
@@ -49,11 +57,13 @@ void writePublisher(FILE* file, const Publisher& publisher, long address) {
 
     int id = publisher.getId();
     char* name = publisher.getName();
-    char* publisherAddress = publisher.getAddress();
+    char* location = publisher.getLocation();
+    long firstBookAddress = publisher.getFirstBookAddress();
 
     fwrite(&id, INT_SIZE, 1, file);
     fwrite(name, CHAR_SIZE, STRING_SIZE, file);
-    fwrite(publisherAddress, CHAR_SIZE, STRING_SIZE, file);
+    fwrite(location, CHAR_SIZE, STRING_SIZE, file);
+    fwrite(&firstBookAddress, LONG_SIZE, 1, file);
 }
 
 Publisher readPublisher(FILE* file, long address) {
@@ -61,12 +71,14 @@ Publisher readPublisher(FILE* file, long address) {
 
     int id;
     char* name = new char[STRING_SIZE];
-    char* publisherAddress = new char[STRING_SIZE];
+    char* location = new char[STRING_SIZE];
+    long firstBookAddress;
 
     fread(&id, INT_SIZE, 1, file);
     fread(name, CHAR_SIZE, STRING_SIZE, file);
-    fread(publisherAddress, CHAR_SIZE, STRING_SIZE, file);
+    fread(location, CHAR_SIZE, STRING_SIZE, file);
+    fread(&firstBookAddress, LONG_SIZE, 1, file);
 
-    return {id, name, publisherAddress};
+    return {id, name, location, firstBookAddress};
 }
 
