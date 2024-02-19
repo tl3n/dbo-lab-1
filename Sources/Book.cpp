@@ -10,6 +10,8 @@ Book::Book(int id,
            char* title,
            char* author,
            char* genre,
+           long prevBookAddress,
+           long nextBookAddress,
            bool isRemoved) {
     // TODO: is this id is already taken
     this->id = id;
@@ -21,6 +23,8 @@ Book::Book(int id,
     this->title = title;
     this->author = author;
     this->genre = genre;
+    this->prevBookAddress = prevBookAddress;
+    this->nextBookAddress = nextBookAddress;
     this->isRemoved = isRemoved;
 }
 int Book::getId() const {
@@ -79,19 +83,26 @@ void Book::setGenre(char* newGenre) {
     this->genre = newGenre;
 }
 
+long Book::getPrevBookAddress() const {
+    return this->prevBookAddress;
+}
+
+void Book::setPrevBookAddress(long newAddress) {
+    this->prevBookAddress = newAddress;
+}
+
+long Book::getNextBookAddress() const {
+    return this->nextBookAddress;
+}
+
+void Book::setNextBookAddress(long newAddress) {
+    this->nextBookAddress = newAddress;
+}
+
 bool Book::getState() const {
     return this->isRemoved;
 }
 
 void Book::setState(bool newState) {
     this->isRemoved = newState;
-}
-
-std::string Book::toString() const {
-    return "ID: " + std::to_string(this->id) +
-           "; Publisher ID: " + std::to_string(this->publisherId) +
-           "; ISBN: " + std::to_string(this->isbn) +
-           "; Title: " + this->title +
-           "; Author: " + this->author +
-           "; Genre: " + this->genre + '\n';
 }

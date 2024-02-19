@@ -6,11 +6,13 @@
 
 Publisher::Publisher(int id,
                      char* name,
-                     char* address,
+                     char* location,
+                     long firstBookAddress,
                      bool isRemoved) {
     this->id = id;
     this->name = name;
-    this->address = address;
+    this->location = location;
+    this->firstBookAddress = firstBookAddress;
     this->isRemoved = isRemoved;
 }
 
@@ -30,12 +32,20 @@ void Publisher::setName(char* newName) {
     this->name = newName;
 }
 
-char* Publisher::getAddress() const {
-    return this->address;
+char* Publisher::getLocation() const {
+    return this->location;
 }
 
-void Publisher::setAddress(char* newAddress) {
-    this->address = newAddress;
+void Publisher::setLocation(char* newLocation) {
+    this->location = newLocation;
+}
+
+long Publisher::getFirstBookAddress() const {
+    return this->firstBookAddress;
+}
+
+void Publisher::setFirstBookAddress(long newAddress) {
+    this->firstBookAddress = newAddress;
 }
 
 bool Publisher::getState() const {
@@ -44,13 +54,6 @@ bool Publisher::getState() const {
 
 void Publisher::setState(bool newState) {
     this->isRemoved = newState;
-}
-
-std::string Publisher::toString() const {
-    return "ID: " + std::to_string(this->id) +
-           "; Name: " + this->name +
-           "; Address: " + this->address +
-           ";";
 }
 
 

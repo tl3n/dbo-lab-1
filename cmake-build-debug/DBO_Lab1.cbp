@@ -90,6 +90,9 @@
 		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Constants.h">
 			<Option target="DBO_Lab1"/>
 		</Unit>
+		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Functions.h">
+			<Option target="DBO_Lab1"/>
+		</Unit>
 		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Publisher.h">
 			<Option target="DBO_Lab1"/>
 		</Unit>
@@ -97,6 +100,9 @@
 			<Option target="DBO_Lab1"/>
 		</Unit>
 		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Sources/Book.cpp">
+			<Option target="DBO_Lab1"/>
+		</Unit>
+		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Sources/Functions.cpp">
 			<Option target="DBO_Lab1"/>
 		</Unit>
 		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Sources/Publisher.cpp">

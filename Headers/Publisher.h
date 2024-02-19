@@ -13,6 +13,7 @@ public:
     Publisher(int id,
               char* name,
               char* address,
+              long firstBookAddress,
               bool state = PUBLISHER_STATE_ACTIVE);
 
     Publisher() = default;
@@ -25,19 +26,22 @@ public:
 
     void setName(char* newName);
 
-    char* getAddress() const;
+    char* getLocation() const;
 
-    void setAddress(char* newAddress);
+    void setLocation(char* newLocation);
+
+    long getFirstBookAddress() const;
+
+    void setFirstBookAddress(long newAddress);
 
     bool getState() const;
 
     void setState(bool newState);
-
-    std::string toString() const;
 private:
     int id = -1;
     char* name = new char[STRING_SIZE];
-    char* address = new char[STRING_SIZE];
+    char* location = new char[STRING_SIZE];
+    long firstBookAddress = -1;
     bool isRemoved = PUBLISHER_STATE_ACTIVE;
 };
 

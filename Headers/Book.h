@@ -18,6 +18,8 @@ public:
          char* title,
          char* author,
          char* genre,
+         long prevBookAddress,
+         long nextBookAddress,
          bool state = BOOK_STATE_ACTIVE);
 
     Book() = default;
@@ -46,11 +48,18 @@ public:
 
     void setGenre(char* newGenre);
 
+    long getPrevBookAddress() const;
+
+    void setPrevBookAddress(long newAddress);
+
+    long getNextBookAddress() const;
+
+    void setNextBookAddress(long newAddress);
+
     bool getState() const;
 
     void setState(bool newState);
 
-    std::string toString() const;
 private:
     int id = -1;
     int publisherId = -1;
@@ -58,6 +67,8 @@ private:
     char* title = new char[STRING_SIZE]; // I need certain size of the string, so it's better to use char*[] than std::string
     char* author = new char[STRING_SIZE];
     char* genre = new char[STRING_SIZE];
+    long prevBookAddress = -1;
+    long nextBookAddress = -1;
     bool isRemoved = BOOK_STATE_ACTIVE;
 };
 
