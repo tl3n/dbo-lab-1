@@ -143,13 +143,45 @@ CMakeFiles/DBO_Lab1.dir/Sources/Functions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DBO_Lab1.dir/Sources/Functions.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\vasyl\CLionProjects\dbo-lab-1\Sources\Functions.cpp -o CMakeFiles\DBO_Lab1.dir\Sources\Functions.cpp.s
 
+CMakeFiles/DBO_Lab1.dir/Sources/ListNode.cpp.obj: CMakeFiles/DBO_Lab1.dir/flags.make
+CMakeFiles/DBO_Lab1.dir/Sources/ListNode.cpp.obj: CMakeFiles/DBO_Lab1.dir/includes_CXX.rsp
+CMakeFiles/DBO_Lab1.dir/Sources/ListNode.cpp.obj: C:/Users/vasyl/CLionProjects/dbo-lab-1/Sources/ListNode.cpp
+CMakeFiles/DBO_Lab1.dir/Sources/ListNode.cpp.obj: CMakeFiles/DBO_Lab1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\vasyl\CLionProjects\dbo-lab-1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/DBO_Lab1.dir/Sources/ListNode.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DBO_Lab1.dir/Sources/ListNode.cpp.obj -MF CMakeFiles\DBO_Lab1.dir\Sources\ListNode.cpp.obj.d -o CMakeFiles\DBO_Lab1.dir\Sources\ListNode.cpp.obj -c C:\Users\vasyl\CLionProjects\dbo-lab-1\Sources\ListNode.cpp
+
+CMakeFiles/DBO_Lab1.dir/Sources/ListNode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DBO_Lab1.dir/Sources/ListNode.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\vasyl\CLionProjects\dbo-lab-1\Sources\ListNode.cpp > CMakeFiles\DBO_Lab1.dir\Sources\ListNode.cpp.i
+
+CMakeFiles/DBO_Lab1.dir/Sources/ListNode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DBO_Lab1.dir/Sources/ListNode.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\vasyl\CLionProjects\dbo-lab-1\Sources\ListNode.cpp -o CMakeFiles\DBO_Lab1.dir\Sources\ListNode.cpp.s
+
+CMakeFiles/DBO_Lab1.dir/Sources/Queue.cpp.obj: CMakeFiles/DBO_Lab1.dir/flags.make
+CMakeFiles/DBO_Lab1.dir/Sources/Queue.cpp.obj: CMakeFiles/DBO_Lab1.dir/includes_CXX.rsp
+CMakeFiles/DBO_Lab1.dir/Sources/Queue.cpp.obj: C:/Users/vasyl/CLionProjects/dbo-lab-1/Sources/Queue.cpp
+CMakeFiles/DBO_Lab1.dir/Sources/Queue.cpp.obj: CMakeFiles/DBO_Lab1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\vasyl\CLionProjects\dbo-lab-1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/DBO_Lab1.dir/Sources/Queue.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DBO_Lab1.dir/Sources/Queue.cpp.obj -MF CMakeFiles\DBO_Lab1.dir\Sources\Queue.cpp.obj.d -o CMakeFiles\DBO_Lab1.dir\Sources\Queue.cpp.obj -c C:\Users\vasyl\CLionProjects\dbo-lab-1\Sources\Queue.cpp
+
+CMakeFiles/DBO_Lab1.dir/Sources/Queue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DBO_Lab1.dir/Sources/Queue.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\vasyl\CLionProjects\dbo-lab-1\Sources\Queue.cpp > CMakeFiles\DBO_Lab1.dir\Sources\Queue.cpp.i
+
+CMakeFiles/DBO_Lab1.dir/Sources/Queue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DBO_Lab1.dir/Sources/Queue.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\vasyl\CLionProjects\dbo-lab-1\Sources\Queue.cpp -o CMakeFiles\DBO_Lab1.dir\Sources\Queue.cpp.s
+
 # Object files for target DBO_Lab1
 DBO_Lab1_OBJECTS = \
 "CMakeFiles/DBO_Lab1.dir/main.cpp.obj" \
 "CMakeFiles/DBO_Lab1.dir/Sources/Publisher.cpp.obj" \
 "CMakeFiles/DBO_Lab1.dir/Sources/Book.cpp.obj" \
 "CMakeFiles/DBO_Lab1.dir/Sources/Utilities.cpp.obj" \
-"CMakeFiles/DBO_Lab1.dir/Sources/Functions.cpp.obj"
+"CMakeFiles/DBO_Lab1.dir/Sources/Functions.cpp.obj" \
+"CMakeFiles/DBO_Lab1.dir/Sources/ListNode.cpp.obj" \
+"CMakeFiles/DBO_Lab1.dir/Sources/Queue.cpp.obj"
 
 # External object files for target DBO_Lab1
 DBO_Lab1_EXTERNAL_OBJECTS =
@@ -159,11 +191,13 @@ DBO_Lab1.exe: CMakeFiles/DBO_Lab1.dir/Sources/Publisher.cpp.obj
 DBO_Lab1.exe: CMakeFiles/DBO_Lab1.dir/Sources/Book.cpp.obj
 DBO_Lab1.exe: CMakeFiles/DBO_Lab1.dir/Sources/Utilities.cpp.obj
 DBO_Lab1.exe: CMakeFiles/DBO_Lab1.dir/Sources/Functions.cpp.obj
+DBO_Lab1.exe: CMakeFiles/DBO_Lab1.dir/Sources/ListNode.cpp.obj
+DBO_Lab1.exe: CMakeFiles/DBO_Lab1.dir/Sources/Queue.cpp.obj
 DBO_Lab1.exe: CMakeFiles/DBO_Lab1.dir/build.make
 DBO_Lab1.exe: CMakeFiles/DBO_Lab1.dir/linkLibs.rsp
 DBO_Lab1.exe: CMakeFiles/DBO_Lab1.dir/objects1.rsp
 DBO_Lab1.exe: CMakeFiles/DBO_Lab1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\vasyl\CLionProjects\dbo-lab-1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable DBO_Lab1.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\vasyl\CLionProjects\dbo-lab-1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable DBO_Lab1.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\DBO_Lab1.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

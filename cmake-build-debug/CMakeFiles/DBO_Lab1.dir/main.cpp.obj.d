@@ -147,4 +147,5 @@ CMakeFiles/DBO_Lab1.dir/main.cpp.obj: \
  C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Book.h \
  C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Utilities.h \
  C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Book.h \
- C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Publisher.h
+ C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Publisher.h \
+ C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/ListNode.h

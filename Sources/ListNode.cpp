@@ -2,9 +2,9 @@
 // Created by vasyl on 2/20/2024.
 //
 
-#include "Node.h"
+#include "ListNode.h"
 
-long getAddress(int id, Node* head) {
+long getAddress(int id, ListNode* head) {
     // checking id range
     if (id < 1 || id > INDEXES_MAX_SIZE) {
         std::cerr << "ID is out of range.\n";
@@ -12,7 +12,7 @@ long getAddress(int id, Node* head) {
     }
 
     // finding address
-    Node* temp = head;
+    ListNode* temp = head;
     while (temp) {
         if (temp->id == id) {
             return temp->address;
@@ -24,7 +24,7 @@ long getAddress(int id, Node* head) {
     return -1;
 }
 
-bool isIdFree(int id, Node* head) {
+bool isIdFree(int id, ListNode* head) {
     // check if id is already taken and is in range
     if (id < 1 || id > INDEXES_MAX_SIZE) {
         std::cerr << "ID is out of range.\n";
@@ -38,7 +38,7 @@ bool isIdFree(int id, Node* head) {
     }
 
     // check if id is free
-    Node* temp = head;
+    ListNode* temp = head;
     while (temp) {
         if (temp->id == id) {
             return false;
@@ -49,7 +49,7 @@ bool isIdFree(int id, Node* head) {
     return true;
 }
 
-void addNode(int id, long address, Node** head) {
+void addListNode(int id, long address, ListNode** head) {
     // check if id is already taken and is in range
     // check if head exists
     if (!isIdFree(id, *head)) {
@@ -63,7 +63,13 @@ void addNode(int id, long address, Node** head) {
         return;
     }
 
-    Node* temp = new Node;
+    if ((*head)->id == -1) {
+        (*head)->id = id;
+        (*head)->address = address;
+        return;
+    }
+
+    ListNode* temp = new ListNode;
     temp->id = id;
     temp->address = address;
 
@@ -71,7 +77,7 @@ void addNode(int id, long address, Node** head) {
     (*head) = temp;
 }
 
-void removeNode(int id, Node** head) {
+void removeListNode(int id, ListNode** head) {
     // check if id is already taken and is in range
     // check if head exists
     if (isIdFree(id, *head)) {
@@ -80,17 +86,17 @@ void removeNode(int id, Node** head) {
 
     // check if head is node to delete
     if ((*head)->id == id) {
-        Node* temp = *head;
+        ListNode* temp = *head;
         *head = (*head)->next;
         delete temp;
         return;
     }
 
     // delete node
-    Node* temp = *head;
+    ListNode* temp = *head;
     while (temp->next) {
         if (temp->next->id == id) {
-            Node* toRemove = temp->next;
+            ListNode* toRemove = temp->next;
             temp->next = temp->next->next;
             delete toRemove;
             return;
@@ -99,7 +105,7 @@ void removeNode(int id, Node** head) {
     }
 }
 
-void sortList(Node** head) {
+void sortList(ListNode** head) {
     if (!(*head) || !(*head)->next) {
         // if the list is empty or has only one element it is already sorted
         return;
@@ -107,8 +113,8 @@ void sortList(Node** head) {
 
     //  bubble sort algorithm
     bool swapped;
-    Node* current;
-    Node* lastSorted = nullptr;
+    ListNode* current;
+    ListNode* lastSorted = nullptr;
 
     do {
         swapped = false;
@@ -135,13 +141,13 @@ void sortList(Node** head) {
     } while (swapped);
 }
 
-void printList(Node* head) {
+void printList(ListNode* head) {
     if (!head) {
         std::cerr << "Invalid list head pointer.\n";
         return;
     }
 
-    Node* temp = head;
+    ListNode* temp = head;
     while (temp) {
         std::cout << temp->id << ' ';
         temp = temp->next;

@@ -176,29 +176,29 @@ Sources/Functions.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Functions.cpp.s
 .PHONY : Sources/Functions.cpp.s
 
-Sources/Node.obj: Sources/Node.cpp.obj
-.PHONY : Sources/Node.obj
+Sources/ListNode.obj: Sources/ListNode.cpp.obj
+.PHONY : Sources/ListNode.obj
 
 # target to build an object file
-Sources/Node.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Node.cpp.obj
-.PHONY : Sources/Node.cpp.obj
+Sources/ListNode.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/ListNode.cpp.obj
+.PHONY : Sources/ListNode.cpp.obj
 
-Sources/Node.i: Sources/Node.cpp.i
-.PHONY : Sources/Node.i
+Sources/ListNode.i: Sources/ListNode.cpp.i
+.PHONY : Sources/ListNode.i
 
 # target to preprocess a source file
-Sources/Node.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Node.cpp.i
-.PHONY : Sources/Node.cpp.i
+Sources/ListNode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/ListNode.cpp.i
+.PHONY : Sources/ListNode.cpp.i
 
-Sources/Node.s: Sources/Node.cpp.s
-.PHONY : Sources/Node.s
+Sources/ListNode.s: Sources/ListNode.cpp.s
+.PHONY : Sources/ListNode.s
 
 # target to generate assembly for a file
-Sources/Node.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Node.cpp.s
-.PHONY : Sources/Node.cpp.s
+Sources/ListNode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/ListNode.cpp.s
+.PHONY : Sources/ListNode.cpp.s
 
 Sources/Publisher.obj: Sources/Publisher.cpp.obj
 .PHONY : Sources/Publisher.obj
@@ -223,6 +223,30 @@ Sources/Publisher.s: Sources/Publisher.cpp.s
 Sources/Publisher.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Publisher.cpp.s
 .PHONY : Sources/Publisher.cpp.s
+
+Sources/Queue.obj: Sources/Queue.cpp.obj
+.PHONY : Sources/Queue.obj
+
+# target to build an object file
+Sources/Queue.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Queue.cpp.obj
+.PHONY : Sources/Queue.cpp.obj
+
+Sources/Queue.i: Sources/Queue.cpp.i
+.PHONY : Sources/Queue.i
+
+# target to preprocess a source file
+Sources/Queue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Queue.cpp.i
+.PHONY : Sources/Queue.cpp.i
+
+Sources/Queue.s: Sources/Queue.cpp.s
+.PHONY : Sources/Queue.s
+
+# target to generate assembly for a file
+Sources/Queue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Queue.cpp.s
+.PHONY : Sources/Queue.cpp.s
 
 Sources/Utilities.obj: Sources/Utilities.cpp.obj
 .PHONY : Sources/Utilities.obj
@@ -287,12 +311,15 @@ help:
 	@echo ... Sources/Functions.obj
 	@echo ... Sources/Functions.i
 	@echo ... Sources/Functions.s
-	@echo ... Sources/Node.obj
-	@echo ... Sources/Node.i
-	@echo ... Sources/Node.s
+	@echo ... Sources/ListNode.obj
+	@echo ... Sources/ListNode.i
+	@echo ... Sources/ListNode.s
 	@echo ... Sources/Publisher.obj
 	@echo ... Sources/Publisher.i
 	@echo ... Sources/Publisher.s
+	@echo ... Sources/Queue.obj
+	@echo ... Sources/Queue.i
+	@echo ... Sources/Queue.s
 	@echo ... Sources/Utilities.obj
 	@echo ... Sources/Utilities.i
 	@echo ... Sources/Utilities.s

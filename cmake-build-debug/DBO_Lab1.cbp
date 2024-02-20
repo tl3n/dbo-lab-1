@@ -93,10 +93,13 @@
 		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Functions.h">
 			<Option target="DBO_Lab1"/>
 		</Unit>
-		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Node.h">
+		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/ListNode.h">
 			<Option target="DBO_Lab1"/>
 		</Unit>
 		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Publisher.h">
+			<Option target="DBO_Lab1"/>
+		</Unit>
+		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Queue.h">
 			<Option target="DBO_Lab1"/>
 		</Unit>
 		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Utilities.h">
@@ -108,10 +111,13 @@
 		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Sources/Functions.cpp">
 			<Option target="DBO_Lab1"/>
 		</Unit>
-		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Sources/Node.cpp">
+		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Sources/ListNode.cpp">
 			<Option target="DBO_Lab1"/>
 		</Unit>
 		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Sources/Publisher.cpp">
+			<Option target="DBO_Lab1"/>
+		</Unit>
+		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Sources/Queue.cpp">
 			<Option target="DBO_Lab1"/>
 		</Unit>
 		<Unit filename="C:/Users/vasyl/CLionProjects/dbo-lab-1/Sources/Utilities.cpp">

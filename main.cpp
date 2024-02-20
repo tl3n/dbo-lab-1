@@ -2,7 +2,7 @@
 #include "Publisher.h"
 #include "Book.h"
 #include "Utilities.h"
-#include "Node.h"
+#include "ListNode.h"
 
 int main() {
     // publisher class tests
@@ -43,23 +43,23 @@ int main() {
     return 0;*/
 
     // list tests
-    Node* head = new Node;
+    ListNode* head = new ListNode;
     head->id = 1;
     head->address = 0;
 
-    addNode(5, 0, &head);
-    addNode(20, 0, &head);
-    addNode(3, 0, &head);
-    addNode(8, 0, &head);
+    addListNode(5, 0, &head);
+    addListNode(20, 0, &head);
+    addListNode(3, 0, &head);
+    addListNode(8, 0, &head);
 
     printList(head);
 
     sortList(&head);
     printList(head);
 
-    removeNode(8, &head);
+    removeListNode(8, &head);
     printList(head);
 
-    removeNode(1, &head);
+    removeListNode(1, &head);
     printList(head);
 }

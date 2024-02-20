@@ -15,5 +15,7 @@ add_executable(DBO_Lab1 main.cpp
         Sources/Utilities.cpp
         Headers/Functions.h
         Sources/Functions.cpp
-        Headers/Node.h
-        Sources/Node.cpp)
+        Headers/ListNode.h
+        Sources/ListNode.cpp
+        Headers/Queue.h
+        Sources/Queue.cpp)
