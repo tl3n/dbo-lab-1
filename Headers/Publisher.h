@@ -37,6 +37,8 @@ public:
     bool getState() const;
 
     void setState(bool newState);
+
+    std::string toString();
 private:
     int id = -1;
     char* name = new char[STRING_SIZE];

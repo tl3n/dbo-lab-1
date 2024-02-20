@@ -176,6 +176,30 @@ Sources/Functions.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Functions.cpp.s
 .PHONY : Sources/Functions.cpp.s
 
+Sources/Node.obj: Sources/Node.cpp.obj
+.PHONY : Sources/Node.obj
+
+# target to build an object file
+Sources/Node.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Node.cpp.obj
+.PHONY : Sources/Node.cpp.obj
+
+Sources/Node.i: Sources/Node.cpp.i
+.PHONY : Sources/Node.i
+
+# target to preprocess a source file
+Sources/Node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Node.cpp.i
+.PHONY : Sources/Node.cpp.i
+
+Sources/Node.s: Sources/Node.cpp.s
+.PHONY : Sources/Node.s
+
+# target to generate assembly for a file
+Sources/Node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Node.cpp.s
+.PHONY : Sources/Node.cpp.s
+
 Sources/Publisher.obj: Sources/Publisher.cpp.obj
 .PHONY : Sources/Publisher.obj
 
@@ -263,6 +287,9 @@ help:
 	@echo ... Sources/Functions.obj
 	@echo ... Sources/Functions.i
 	@echo ... Sources/Functions.s
+	@echo ... Sources/Node.obj
+	@echo ... Sources/Node.i
+	@echo ... Sources/Node.s
 	@echo ... Sources/Publisher.obj
 	@echo ... Sources/Publisher.i
 	@echo ... Sources/Publisher.s

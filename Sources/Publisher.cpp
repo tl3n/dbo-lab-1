@@ -56,5 +56,11 @@ void Publisher::setState(bool newState) {
     this->isRemoved = newState;
 }
 
-
+std::string Publisher::toString() {
+    return "ID: " + std::to_string(this->id) +
+           "; Name: " + this->name +
+           "; Location: " + this->location +
+           "; First book address: " + std::to_string(this->firstBookAddress) +
+           ";\n";
+}
 

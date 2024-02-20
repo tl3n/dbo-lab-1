@@ -60,6 +60,8 @@ public:
 
     void setState(bool newState);
 
+    std::string toString() const;
+
 private:
     int id = -1;
     int publisherId = -1;

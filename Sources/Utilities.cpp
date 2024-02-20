@@ -3,11 +3,10 @@
 //
 #include "Utilities.h"
 
-void writeBook(FILE* file, const Book& book, long address) {
+void writeBook(FILE* file, const Book& book) {
     // file should be opened previously
     // this is why there is no check if file exists
     // it should be done on the other side
-    fseek(file, address, SEEK_SET);
 
     int id = book.getId();
     int publisherId = book.getPublisherId();
@@ -28,9 +27,12 @@ void writeBook(FILE* file, const Book& book, long address) {
     fwrite(&nextBookAddress, LONG_SIZE, 1, file);
 }
 
-Book readBook(FILE* file, long address) {
+void writeBook(FILE* file, const Book& book, long address) {
     fseek(file, address, SEEK_SET);
+    writeBook(file, book);
+}
 
+Book readBook(FILE* file) {
     int id;
     int publisherId;
     long long isbn;
@@ -52,9 +54,12 @@ Book readBook(FILE* file, long address) {
     return {id, publisherId, isbn, title, author, genre, prevBookAddress, nextBookAddress};
 }
 
-void writePublisher(FILE* file, const Publisher& publisher, long address) {
+Book readBook(FILE* file, long address) {
     fseek(file, address, SEEK_SET);
+    return readBook(file);
+}
 
+void writePublisher(FILE* file, const Publisher& publisher) {
     int id = publisher.getId();
     char* name = publisher.getName();
     char* location = publisher.getLocation();
@@ -66,9 +71,12 @@ void writePublisher(FILE* file, const Publisher& publisher, long address) {
     fwrite(&firstBookAddress, LONG_SIZE, 1, file);
 }
 
-Publisher readPublisher(FILE* file, long address) {
+void writePublisher(FILE* file, const Publisher& publisher, long address) {
     fseek(file, address, SEEK_SET);
+    writePublisher(file, publisher);
+}
 
+Publisher readPublisher(FILE* file) {
     int id;
     char* name = new char[STRING_SIZE];
     char* location = new char[STRING_SIZE];
@@ -82,3 +90,7 @@ Publisher readPublisher(FILE* file, long address) {
     return {id, name, location, firstBookAddress};
 }
 
+Publisher readPublisher(FILE* file, long address) {
+    fseek(file, address, SEEK_SET);
+    return readPublisher(file);
+}

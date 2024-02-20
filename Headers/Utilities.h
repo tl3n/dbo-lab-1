@@ -9,12 +9,20 @@
 #include "Book.h"
 #include "Publisher.h"
 
-void writeBook(FILE* file, const Book& book, long address = 0);
+void writeBook(FILE* file, const Book& book);
 
-Book readBook(FILE* file, long address = 0);
+void writeBook(FILE* file, const Book& book, long address);
 
-void writePublisher(FILE* file, const Publisher& publisher, long address = 0);
+Book readBook(FILE* file);
 
-Publisher readPublisher(FILE* file, long address = 0);
+Book readBook(FILE* file, long address);
+
+void writePublisher(FILE* file, const Publisher& publisher);
+
+void writePublisher(FILE* file, const Publisher& publisher, long address);
+
+Publisher readPublisher(FILE* file);
+
+Publisher readPublisher(FILE* file, long address);
 
 #endif //DBO_LAB1_UTILITIES_H

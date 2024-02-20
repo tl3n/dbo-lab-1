@@ -106,3 +106,12 @@ bool Book::getState() const {
 void Book::setState(bool newState) {
     this->isRemoved = newState;
 }
+
+std::string Book::toString() const {
+    return "ID: " + std::to_string(this->id) +
+           "; Publisher ID: " + std::to_string(this->publisherId) +
+           "; ISBN: " + std::to_string(this->isbn) +
+           "; Title: " + this->title +
+           "; Author: " + this->author +
+           "; Genre: " + this->genre + '\n';
+}
