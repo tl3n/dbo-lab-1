@@ -23,7 +23,6 @@ void Queue::push(long address) {
 }
 long Queue::pop() {
     if (isEmpty()) {
-        std::cerr << "Queue is empty.\n";
         return -1;
     }
     QueueNode* temp = this->head;

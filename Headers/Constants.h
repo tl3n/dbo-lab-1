@@ -10,13 +10,8 @@ const int INT_SIZE = sizeof(int);
 const int LONG_SIZE = sizeof(long);
 const int LL_SIZE = sizeof(long long);
 const int CHAR_SIZE = sizeof(char);
-const int INDEXES_MAX_SIZE = 20;
 
-
-const bool PUBLISHER_STATE_ACTIVE = false;
-const bool PUBLISHER_STATE_REMOVED = true;
-
-const bool BOOK_STATE_ACTIVE = false;
-const bool BOOK_STATE_REMOVED = true;
+const bool STATE_ACTIVE = false;
+const bool STATE_REMOVED = true;
 
 #endif //DBO_LAB1_CONSTANTS_H

@@ -6,8 +6,8 @@
 
 long getAddress(int id, ListNode* head) {
     // checking id range
-    if (id < 1 || id > INDEXES_MAX_SIZE) {
-        std::cerr << "ID is out of range.\n";
+    if (id < 1) {
+        //std::cerr << "ID is out of range.\n";
         return -1;
     }
 
@@ -20,20 +20,20 @@ long getAddress(int id, ListNode* head) {
         temp = temp->next;
     }
     // if address wasn't found, returning an error
-    std::cerr << "Index not found.\n";
+    //std::cerr << "Index not found.\n";
     return -1;
 }
 
 bool isIdFree(int id, ListNode* head) {
     // check if id is already taken and is in range
-    if (id < 1 || id > INDEXES_MAX_SIZE) {
-        std::cerr << "ID is out of range.\n";
+    if (id < 1) {
+        //std::cerr << "ID is out of range.\n";
         return false;
     }
 
     // check if head exists
     if (!head) {
-        std::cerr << "Invalid list head pointer\n";
+        //std::cerr << "Invalid list head pointer\n";
         return false;
     }
 
@@ -77,7 +77,7 @@ void addListNode(int id, long address, ListNode** head) {
     (*head) = temp;
 }
 
-void removeListNode(int id, ListNode** head) {
+void deleteListNode(int id, ListNode** head) {
     // check if id is already taken and is in range
     // check if head exists
     if (isIdFree(id, *head)) {

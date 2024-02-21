@@ -14,7 +14,7 @@ public:
               char* name,
               char* address,
               long firstBookAddress,
-              bool state = PUBLISHER_STATE_ACTIVE);
+              bool state = STATE_ACTIVE);
 
     Publisher() = default;
 
@@ -44,7 +44,7 @@ private:
     char* name = new char[STRING_SIZE];
     char* location = new char[STRING_SIZE];
     long firstBookAddress = -1;
-    bool isRemoved = PUBLISHER_STATE_ACTIVE;
+    bool isRemoved = STATE_ACTIVE;
 };
 
 #endif //DBO_LAB1_PUBLISHER_H

@@ -20,7 +20,7 @@ public:
          char* genre,
          long prevBookAddress,
          long nextBookAddress,
-         bool state = BOOK_STATE_ACTIVE);
+         bool state = STATE_ACTIVE);
 
     Book() = default;
 
@@ -65,13 +65,13 @@ public:
 private:
     int id = -1;
     int publisherId = -1;
-    long long isbn = 0;
+    long long isbn = -1;
     char* title = new char[STRING_SIZE]; // I need certain size of the string, so it's better to use char*[] than std::string
     char* author = new char[STRING_SIZE];
     char* genre = new char[STRING_SIZE];
     long prevBookAddress = -1;
     long nextBookAddress = -1;
-    bool isRemoved = BOOK_STATE_ACTIVE;
+    bool isRemoved = STATE_ACTIVE;
 };
 
 #endif //DBO_LAB1_BOOK_H

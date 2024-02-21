@@ -21,7 +21,7 @@ bool isIdFree(int id, ListNode* head);
 
 void addListNode(int id, long address, ListNode** head);
 
-void removeListNode(int id, ListNode** head);
+void deleteListNode(int id, ListNode** head);
 
 void sortList(ListNode** head);
 
