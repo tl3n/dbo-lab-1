@@ -6,7 +6,6 @@
 #define DBO_LAB1_LISTNODE_H
 
 #include <iostream>
-#include "Constants.h"
 
 struct ListNode {
     int id = -1;
@@ -24,6 +23,8 @@ void addListNode(int id, long address, ListNode** head);
 void deleteListNode(int id, ListNode** head);
 
 void sortList(ListNode** head);
+
+int getSize(ListNode* head);
 
 void printList(ListNode* head);
 

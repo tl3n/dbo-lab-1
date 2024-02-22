@@ -16,6 +16,7 @@ void writeBook(FILE* file, const Book& book) {
     char* genre = book.getGenre();
     long prevBookAddress = book.getPrevBookAddress();
     long nextBookAddress = book.getNextBookAddress();
+    bool state = book.getState();
 
     fwrite(&id, INT_SIZE, 1, file);
     fwrite(&publisherId, INT_SIZE, 1, file);
@@ -25,6 +26,7 @@ void writeBook(FILE* file, const Book& book) {
     fwrite(genre, CHAR_SIZE, STRING_SIZE, file);
     fwrite(&prevBookAddress, LONG_SIZE, 1, file);
     fwrite(&nextBookAddress, LONG_SIZE, 1, file);
+    fwrite(&state, BOOL_SIZE, 1, file);
 }
 
 void writeBook(FILE* file, const Book& book, long address) {
@@ -41,6 +43,8 @@ Book readBook(FILE* file) {
     char* genre = new char[STRING_SIZE];
     long prevBookAddress;
     long nextBookAddress;
+    bool state;
+
 
     fread(&id, INT_SIZE, 1, file);
     fread(&publisherId, INT_SIZE, 1, file);
@@ -50,6 +54,7 @@ Book readBook(FILE* file) {
     fread(genre, CHAR_SIZE, STRING_SIZE, file);
     fread(&prevBookAddress, LONG_SIZE, 1, file);
     fread(&nextBookAddress, LONG_SIZE, 1, file);
+    fread(&state, BOOL_SIZE, 1, file);
 
     return {id, publisherId, isbn, title, author, genre, prevBookAddress, nextBookAddress};
 }
@@ -64,14 +69,17 @@ void writePublisher(FILE* file, const Publisher& publisher) {
     char* name = publisher.getName();
     char* location = publisher.getLocation();
     long firstBookAddress = publisher.getFirstBookAddress();
+    bool state = publisher.getState();
 
     fwrite(&id, INT_SIZE, 1, file);
     fwrite(name, CHAR_SIZE, STRING_SIZE, file);
     fwrite(location, CHAR_SIZE, STRING_SIZE, file);
     fwrite(&firstBookAddress, LONG_SIZE, 1, file);
+    fwrite(&state, BOOL_SIZE, 1, file);
+
 }
 
-void writePublisher(FILE* file, const Publisher& publisher, long address) {
+void writePublisher(FILE* file, Publisher publisher, long address) {
     fseek(file, address, SEEK_SET);
     writePublisher(file, publisher);
 }
@@ -81,11 +89,13 @@ Publisher readPublisher(FILE* file) {
     char* name = new char[STRING_SIZE];
     char* location = new char[STRING_SIZE];
     long firstBookAddress;
+    bool state;
 
     fread(&id, INT_SIZE, 1, file);
     fread(name, CHAR_SIZE, STRING_SIZE, file);
     fread(location, CHAR_SIZE, STRING_SIZE, file);
     fread(&firstBookAddress, LONG_SIZE, 1, file);
+    fread(&state, BOOL_SIZE, 1, file);
 
     return {id, name, location, firstBookAddress};
 }
@@ -93,4 +103,11 @@ Publisher readPublisher(FILE* file) {
 Publisher readPublisher(FILE* file, long address) {
     fseek(file, address, SEEK_SET);
     return readPublisher(file);
+}
+
+bool isFileEmpty(FILE* file) {
+    fseek(file, 0, SEEK_END);
+    long address = ftell(file);
+    fseek(file, 0, SEEK_SET);
+    return address == 0;
 }

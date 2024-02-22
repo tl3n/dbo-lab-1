@@ -4,8 +4,8 @@
 
 #include "Functions.h"
 
-FILE* publishersF = fopen("publishers.bin", "wb+");
-FILE* booksF = fopen("books.bin", "wb+");
+FILE* publishersF;
+FILE* booksF;
 
 ListNode* publishersIndex = new ListNode;
 Queue* publishersGarbage = new Queue;
@@ -20,10 +20,29 @@ long getPublisherAddress(int id) {
 Publisher getPublisher(int id) {
     long address = getPublisherAddress(id);
     if (address == -1) {
-        std::cerr << "No publisher with such ID\n";
+        //std::cerr << "No publisher with such ID\n";
         return Publisher();
     }
     return readPublisher(publishersF, address);
+}
+
+void getAllPublishers() {
+    if (publishersIndex->id == -1) {
+        std::cout << "No publishers.\n";
+        return;
+    }
+
+    ListNode* temp = publishersIndex;
+    while (temp) {
+        int id = temp->id;
+        Publisher publisher = getPublisher(id);
+        std::cout << publisher.toString() << '\n';
+        temp = temp->next;
+    }
+}
+
+void countPublishers() {
+    std::cout << "Total publishers: " << getSize(publishersIndex) << '\n';
 }
 
 long getBookAddress(int id) {
@@ -39,10 +58,42 @@ Book getBook(int id) {
     return readBook(booksF, address);
 }
 
-void deletePublisher(int id) {
+void getAllBooks() {
+    if (booksIndex->id == -1) {
+        std::cout << "No books.\n";
+        return;
+    }
+
+    ListNode* temp = booksIndex;
+    while (temp) {
+        int id = temp->id;
+        Book book = getBook(id);
+        std::cout << book.toString() << '\n';
+        temp = temp->next;
+    }
+}
+
+void countBooks() {
+    std::cout << "Total books: " << getSize(booksIndex) << '\n';
+}
+
+int countBooksOfPublisher(int id) {
+    Publisher publisher = getPublisher(id);
+    long address = publisher.getFirstBookAddress();
+
+    int count = 0;
+    while (address != -1) {
+        Book book = readBook(booksF, address);
+        ++count;
+        address = book.getNextBookAddress();
+    }
+    return count;
+}
+
+bool removePublisher(int id) {
     Publisher publisher = getPublisher(id);
     if (publisher.getId() == -1) {
-        return;
+        return false;
     }
     publisher.setState(STATE_REMOVED);
 
@@ -58,17 +109,18 @@ void deletePublisher(int id) {
     while (bookAddress != -1) {
         Book book = readBook(booksF, bookAddress);
         book.setState(STATE_REMOVED);
-        // I guess I don't need to update book rn? better to do it when closing the file;
+        writeBook(booksF, book, bookAddress);
         booksGarbage->push(bookAddress);
         deleteListNode(book.getId(), &booksIndex);
         bookAddress = book.getNextBookAddress();
     }
+    return true;
 }
 
-void deleteBook(int id) {
+bool removeBook(int id) {
     Book book = getBook(id);
     if (book.getId() == -1) {
-        return;
+        return false;
     }
     book.setState(STATE_REMOVED);
 
@@ -96,15 +148,17 @@ void deleteBook(int id) {
     }
 
     long address = getBookAddress(id);
-    if (address != -1) {
-        writeBook(booksF, book, address);
-        booksGarbage->push(address);
-        deleteListNode(id, &booksIndex);
+    if (address == -1) {
+        return false;
     }
 
+    writeBook(booksF, book, address);
+    booksGarbage->push(address);
+    deleteListNode(id, &booksIndex);
+    return true;
 }
 
-void insertPublisher(const Publisher& newPublisher) {
+bool insertPublisher(const Publisher& newPublisher) {
     long address = publishersGarbage->pop();
     if (address == -1) {
         fseek(publishersF, 0, SEEK_END);
@@ -112,17 +166,14 @@ void insertPublisher(const Publisher& newPublisher) {
     }
     int id = newPublisher.getId();
     addListNode(id, address, &publishersIndex);
+    sortList(&publishersIndex);
 
     writePublisher(publishersF, newPublisher, address);
+    return true;
 }
 
-void insertBook(Book& newBook) {
+bool insertBook(Book& newBook) {
     int publisherId = newBook.getPublisherId();
-    // TODO: transfer this check to the creation of book?
-    if (isIdFree(publisherId, publishersIndex)) {
-        std::cerr << "No publisher with such ID.\n";
-        return;
-    }
 
     long address = booksGarbage->pop();
     if (address == -1) {
@@ -150,24 +201,129 @@ void insertBook(Book& newBook) {
 
         writeBook(booksF, book, bookAddress);
     }
+
+    addListNode(newBook.getId(), address, &booksIndex);
+    sortList(&booksIndex);
+
     writeBook(booksF, newBook, address);
+    return true;
 }
 
-void updatePublisher(int id, const Publisher& newPublisher) {
+bool updatePublisher(int id, const Publisher& newPublisher) {
     long address = getPublisherAddress(id);
     if (address == -1) {
-        std::cerr << "No publisher with such ID\n";
-        return;
+        //std::cerr << "No publisher with such ID\n";
+        return false;
     }
-    writePublisher(publishersF, newPublisher);
-
+    writePublisher(publishersF, newPublisher, address);
+    return true;
 }
 
-void updateBook(int id, const Book& newBook) {
+bool updateBook(int id, const Book& newBook) {
     long address = getBookAddress(id);
     if (address == 1) {
         std::cerr << "No book with such ID\n";
+        return false;
+    }
+    writeBook(booksF, newBook, address);
+    return true;
+}
+
+bool checkPublisherId(int id) {
+    return isIdFree(id, publishersIndex);
+}
+
+bool checkBookId(int id) {
+    return isIdFree(id, booksIndex);
+}
+
+void loadIndex(char* filePath, ListNode** head) {
+    FILE* file = fopen(filePath, "rb+");
+    if (!file) {
+        file = fopen(filePath, "wb+");
+    }
+
+    if (!isFileEmpty(file)) {
+        int id;
+        long address;
+
+        do {
+            fread(&id, INT_SIZE, 1, file);
+            fread(&address, LONG_SIZE, 1, file);
+            addListNode(id, address, head);
+        } while (!feof(file));
+    }
+    fclose(file);
+}
+
+void writeIndex(char* filePath, ListNode* head) {
+    FILE* file = fopen(filePath, "wb+");
+
+    ListNode* temp = head;
+    if (temp->id == -1) {
         return;
     }
-    writeBook(booksF, newBook);
+
+    while(temp) {
+        fwrite(&temp->id, INT_SIZE, 1, file);
+        fwrite(&temp->address, LONG_SIZE, 1, file);
+        temp = temp->next;
+    }
+    fclose(file);
+}
+
+void loadGarbage(char* filePath, Queue** garbage) {
+    FILE* file = fopen(filePath, "rb+");
+    if (!file) {
+        file = fopen(filePath, "wb+");
+    }
+
+    if (!isFileEmpty(file)) {
+        long address;
+        do {
+            fread(&address, LONG_SIZE, 1, file);
+            (*garbage)->push(address);
+        } while (!feof(file));
+    }
+    fclose(file);
+}
+
+void writeGarbage(char* filePath, Queue* garbage) {
+    FILE* file = fopen(filePath, "wb+");
+
+    while(!garbage->isEmpty()) {
+        long address = garbage->pop();
+        fwrite(&address, LONG_SIZE, 1, file);
+    }
+    fclose(file);
+}
+
+void prepareFiles(char* publishersPath, char* booksPath, char* publishersIndexPath, char* booksIndexPath, char* publishersGarbagePath, char* booksGarbagePath) {
+    publishersF = fopen(publishersPath, "rb+");
+    if (!publishersF) {
+        publishersF = fopen(publishersPath, "wb+");
+    }
+
+    booksF = fopen(booksPath, "rb+");
+    if (!booksF) {
+        booksF = fopen(booksPath, "wb+");
+    }
+
+    // loading indexes
+    loadIndex(publishersIndexPath, &publishersIndex);
+    loadIndex(booksIndexPath, &booksIndex);
+
+    // loading garbage
+    loadGarbage(publishersGarbagePath, &publishersGarbage);
+    loadGarbage(booksGarbagePath, &booksGarbage);
+}
+
+void close(char* publishersIndexPath, char* booksIndexPath, char* publishersGarbagePath, char* booksGarbagePath) {
+    fclose(publishersF);
+    writeIndex(publishersIndexPath, publishersIndex);
+    writeGarbage(publishersGarbagePath, publishersGarbage);
+
+    fclose(booksF);
+    writeIndex(booksIndexPath, booksIndex);
+    writeGarbage(booksGarbagePath, booksGarbage);
 }

@@ -5,7 +5,6 @@
 #ifndef DBO_LAB1_UTILITIES_H
 #define DBO_LAB1_UTILITIES_H
 
-#include <cstdlib>
 #include "Book.h"
 #include "Publisher.h"
 
@@ -19,10 +18,11 @@ Book readBook(FILE* file, long address);
 
 void writePublisher(FILE* file, const Publisher& publisher);
 
-void writePublisher(FILE* file, const Publisher& publisher, long address);
+void writePublisher(FILE* file, Publisher publisher, long address);
 
 Publisher readPublisher(FILE* file);
 
 Publisher readPublisher(FILE* file, long address);
 
+bool isFileEmpty(FILE* file);
 #endif //DBO_LAB1_UTILITIES_H

@@ -9,7 +9,7 @@ bool Queue::isEmpty() const {
 
 void Queue::push(long address) {
     if (address < 0) {
-        std::cerr << "Address is out of range.\n";
+        //std::cerr << "Address is out of range.\n";
         return;
     }
 

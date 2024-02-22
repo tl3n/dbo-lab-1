@@ -200,6 +200,30 @@ Sources/ListNode.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/ListNode.cpp.s
 .PHONY : Sources/ListNode.cpp.s
 
+Sources/Menu.obj: Sources/Menu.cpp.obj
+.PHONY : Sources/Menu.obj
+
+# target to build an object file
+Sources/Menu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Menu.cpp.obj
+.PHONY : Sources/Menu.cpp.obj
+
+Sources/Menu.i: Sources/Menu.cpp.i
+.PHONY : Sources/Menu.i
+
+# target to preprocess a source file
+Sources/Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Menu.cpp.i
+.PHONY : Sources/Menu.cpp.i
+
+Sources/Menu.s: Sources/Menu.cpp.s
+.PHONY : Sources/Menu.s
+
+# target to generate assembly for a file
+Sources/Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DBO_Lab1.dir\build.make CMakeFiles/DBO_Lab1.dir/Sources/Menu.cpp.s
+.PHONY : Sources/Menu.cpp.s
+
 Sources/Publisher.obj: Sources/Publisher.cpp.obj
 .PHONY : Sources/Publisher.obj
 
@@ -314,6 +338,9 @@ help:
 	@echo ... Sources/ListNode.obj
 	@echo ... Sources/ListNode.i
 	@echo ... Sources/ListNode.s
+	@echo ... Sources/Menu.obj
+	@echo ... Sources/Menu.i
+	@echo ... Sources/Menu.s
 	@echo ... Sources/Publisher.obj
 	@echo ... Sources/Publisher.i
 	@echo ... Sources/Publisher.s

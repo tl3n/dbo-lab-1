@@ -61,6 +61,6 @@ std::string Publisher::toString() {
            "; Name: " + this->name +
            "; Location: " + this->location +
            "; First book address: " + std::to_string(this->firstBookAddress) +
-           ";\n";
+           "; State:" + std::to_string(this->isRemoved);
 }
 

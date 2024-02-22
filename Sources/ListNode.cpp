@@ -86,6 +86,11 @@ void deleteListNode(int id, ListNode** head) {
 
     // check if head is node to delete
     if ((*head)->id == id) {
+        if ((*head)->next == nullptr) {
+            (*head)->id = -1;
+            (*head)->address = -1;
+            return;
+        }
         ListNode* temp = *head;
         *head = (*head)->next;
         delete temp;
@@ -139,6 +144,18 @@ void sortList(ListNode** head) {
         // mark the last sorted node to optimize the sorting process
         lastSorted = current;
     } while (swapped);
+}
+
+int getSize(ListNode* head) {
+    int size = 0;
+    ListNode* temp = head;
+    while (temp) {
+        if (temp->id != -1) {
+            ++size;
+        }
+        temp = temp->next;
+    }
+    return size;
 }
 
 void printList(ListNode* head) {

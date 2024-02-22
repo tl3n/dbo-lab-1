@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/DBO_Lab1.dir/Sources/Functions.cpp.obj.d"
   "CMakeFiles/DBO_Lab1.dir/Sources/ListNode.cpp.obj"
   "CMakeFiles/DBO_Lab1.dir/Sources/ListNode.cpp.obj.d"
+  "CMakeFiles/DBO_Lab1.dir/Sources/Menu.cpp.obj"
+  "CMakeFiles/DBO_Lab1.dir/Sources/Menu.cpp.obj.d"
   "CMakeFiles/DBO_Lab1.dir/Sources/Publisher.cpp.obj"
   "CMakeFiles/DBO_Lab1.dir/Sources/Publisher.cpp.obj.d"
   "CMakeFiles/DBO_Lab1.dir/Sources/Queue.cpp.obj"

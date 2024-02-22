@@ -142,10 +142,13 @@ CMakeFiles/DBO_Lab1.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
- C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Publisher.h \
+ C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Menu.h \
  C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Constants.h \
- C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Book.h \
- C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Utilities.h \
- C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Book.h \
  C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Publisher.h \
- C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/ListNode.h
+ C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Book.h \
+ C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Functions.h \
+ C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Utilities.h \
+ C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/ListNode.h \
+ C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Queue.h \
+ C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Menu.h \
+ C:/Users/vasyl/CLionProjects/dbo-lab-1/Headers/Functions.h
