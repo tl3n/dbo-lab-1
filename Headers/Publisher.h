@@ -9,7 +9,7 @@
 #include "Constants.h"
 
 
-class Publisher
+struct Publisher
 {
 public:
     Publisher(int id,

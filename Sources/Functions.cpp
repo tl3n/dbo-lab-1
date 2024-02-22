@@ -253,6 +253,7 @@ void loadIndex(char* filePath, ListNode** head) {
             addListNode(id, address, head);
         } while (!feof(file));
     }
+    sortList(head);
     fclose(file);
 }
 

@@ -9,7 +9,7 @@
 #include <string>
 #include "Constants.h"
 
-class Book
+struct Book
 {
 public:
     Book(int id,
